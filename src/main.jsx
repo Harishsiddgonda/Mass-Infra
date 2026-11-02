@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, NavLink, Link, useLocation } from 'react-router-dom';
 import { Menu, X, ArrowUpRight, ArrowRight, Check, MapPin, Mail, Phone, Building2, Handshake, LandPlot, ShieldCheck } from 'lucide-react';
 import logo from './assets/mass-infra-logo.jpg';
+import arunKumarImg from './assets/arun-kumar.jpg';
+import ramamohanReddyImg from './assets/ramamohan-reddy.jpg';
+import shajiKunjuImg from './assets/shaji-kunju.jpg';
 import './styles.css';
 
 let projects = [
@@ -21,7 +24,109 @@ function PageHero({eyebrow='MASS INFRA',title,accent,description}){return <secti
 function ProjectCard({project,index}){const category=project.category||project.type||'Land Development';const imageClass=project.image||'img-building';return <Link className={`project-card ${index===0?'project-large':''}`} to="/contact"><div className={`project-image ${imageClass}`} style={project.image_url?{backgroundImage:`linear-gradient(180deg,rgba(10,28,48,.03),rgba(10,28,48,.2)),url(${project.image_url})`,backgroundSize:'cover',backgroundPosition:'center'}:{}}><span className="project-tag">{String(project.status||'Upcoming').toUpperCase()}</span><span className="project-arrow"><ArrowUpRight size={19}/></span></div><div className="project-caption"><div><h3>{project.name}</h3><p>{category} · {project.location}</p></div><span className="caption-number">{String(index+1).padStart(2,'0')}</span></div></Link>}
 function ProjectGrid({items=projects}){return <div className="project-grid listing-grid">{items.map((p,i)=><ProjectCard key={p.name} project={p} index={i}/>)}</div>}
 function Home(){return <><section className="hero"><div className="hero-overlay"/><div className="container hero-content"><Eyebrow light>LAND DEVELOPMENT · CONSTRUCTION</Eyebrow><h1>Building places.<br/><em>Creating possibilities.</em></h1><p>We bring land, thoughtful planning and dependable execution together to shape spaces made for living, working and growing.</p><div className="hero-actions"><Link className="btn btn-red" to="/projects">Explore our projects <ArrowUpRight size={17}/></Link><Link className="text-link light-link" to="/about">Discover Mass Infra <ArrowRight size={17}/></Link></div><div className="hero-note"><span className="note-line"/><span>BEYOND THE TRUST</span><span className="note-small">A commitment in every detail.</span></div></div><div className="hero-index"><span>01</span><span className="index-line"/><span>04</span></div></section><section className="trust-strip"><div className="container trust-grid"><div className="trust-intro"><span className="mini-label">THE MASS INFRA PROMISE</span><h2>Trust is where<br/>every project begins.</h2></div>{[[<LandPlot/>,'Thoughtful planning','Purpose-led development with long-term value in mind.'],[<ShieldCheck/>,'Quality in execution','Careful coordination and attention to details that matter.'],[<Handshake/>,'Relationships that last','Transparent communication from first conversation onward.']].map(([icon,title,body])=><div className="trust-item" key={title}><span className="trust-icon">{icon}</span><h3>{title}</h3><p>{body}</p></div>)}</div></section><section className="section"><div className="container"><div className="section-heading"><div><Eyebrow>OUR PORTFOLIO</Eyebrow><h2>Spaces with purpose.<br/><em>Projects with potential.</em></h2></div><Link className="text-link dark-link" to="/projects">View all projects <ArrowRight size={17}/></Link></div><ProjectGrid items={projects.slice(0,3)}/><p className="disclaimer">Project visuals and names shown here are illustrative placeholders. Replace them with verified Mass Infra project details before publication.</p></div></section><section className="statement-section"><div className="statement-shape"/><div className="container statement-inner"><Eyebrow light>OUR APPROACH</Eyebrow><h2>Good development is more than building.<br/><em>It's building confidence.</em></h2><p>We believe every successful project begins with listening, grows through thoughtful planning and earns trust through consistent execution.</p><Link className="btn btn-outline-light" to="/about">Know our approach <ArrowRight size={17}/></Link></div></section><section className="section"><div className="container partner-grid"><div className="partner-visual"><div className="partner-photo"/><div className="partner-badge"><strong>01</strong><span>One shared vision.<br/>Lasting possibilities.</span></div></div><div className="partner-copy"><Eyebrow>PARTNER WITH MASS INFRA</Eyebrow><h2>Have land or an idea?<br/><em>Let's explore it together.</em></h2><p>We welcome conversations with landowners, investors, channel partners and professionals who share our commitment to thoughtful development.</p><ul className="check-list"><li>Landowner and joint development conversations</li><li>Investment and business collaboration enquiries</li><li>Channel partner and professional partnerships</li></ul><Link className="btn btn-blue" to="/partner">Explore partnerships <ArrowRight size={17}/></Link></div></div></section></>}
-function About(){return <><PageHero eyebrow="WHO WE ARE" title="Built on trust." accent="Driven by purpose." description="Mass Infra brings a considered approach to land development, construction and real-estate opportunities."/><section className="section"><div className="container two-col"><div><Eyebrow>OUR STORY</Eyebrow><h2>Creating places for<br/><em>what comes next.</em></h2></div><div className="prose"><p className="lead">We see every site as an opportunity to create value—not only through the built environment, but through the relationships and confidence that support it.</p><p>Our approach brings together practical planning, open communication and a focus on quality. We aim to work collaboratively with landowners, customers, partners and professionals throughout the development journey.</p><p>As Mass Infra grows, our guiding principle remains simple: keep trust at the centre of every conversation and every commitment.</p></div></div></section><section className="values-section"><div className="container"><Eyebrow light>WHAT GUIDES US</Eyebrow><h2>Principles that shape<br/><em>every decision.</em></h2><div className="values-grid">{[['01','Integrity','Clear communication and responsible commitments.'],['02','Quality','Careful attention to planning, details and delivery.'],['03','Partnership','Collaborative relationships built on shared goals.'],['04','Long-term thinking','Decisions made with lasting value in mind.']].map(v=><article key={v[0]}><span>{v[0]}</span><h3>{v[1]}</h3><p>{v[2]}</p></article>)}</div></div></section><section className="section"><div className="container callout-box"><div><Eyebrow>LET'S CONNECT</Eyebrow><h2>Have an opportunity to discuss?</h2><p>Talk with our team about a development idea, a site, or a potential collaboration.</p></div><Link className="btn btn-red" to="/contact">Contact Mass Infra <ArrowUpRight size={17}/></Link></div></section></>}
+const leaders = [
+  {
+    name: 'Mr. Arun Kumar',
+    role: 'Chairman & Managing Director',
+    theme: 'Visionary Leadership. Engineering Excellence. Enduring Value.',
+    image: arunKumarImg,
+    alt: 'Portrait of Mr. Arun Kumar',
+    bio: [
+      'With over three decades of experience in the Pre-Engineered Building (PEB), structural, and construction industry, Mr. Arun Kumar brings extensive professional insight and strategic perspective to Mass Infra Projects & Services.',
+      'His experience includes project execution across challenging environments in Muscat and Dubai, spanning telecommunications, civil construction, structural works, and interiors. This international exposure informs a practical approach to complex delivery requirements, coordination, and quality-focused execution.',
+      'His vision is to strengthen Mass Infra as a dependable engineering and construction partner through innovative methods, strong client relationships, and a consistent commitment to quality, safety, and operational efficiency.'
+    ],
+    strengths: ['PEB & Structures', 'International Projects', 'Strategic Direction', 'Client Partnerships'],
+    quote: '“We strive to build more than structures—we build trust, enduring partnerships, and lasting value through engineering excellence.”'
+  },
+  {
+    name: 'Mr. Ramamohan Reddy',
+    role: 'Director – Projects',
+    theme: 'Precision in Planning. Excellence in Execution.',
+    image: ramamohanReddyImg,
+    alt: 'Portrait of Mr. Ramamohan Reddy',
+    bio: [
+      'Successful project delivery begins with a clear vision, meticulous planning, and a disciplined approach to execution. As Director – Projects, Mr. Ramamohan Reddy represents Mass Infra’s focus on translating project requirements into coordinated, high-quality outcomes.',
+      'Project leadership calls for close attention to schedules, resources, quality expectations, and stakeholder coordination. By emphasizing accountability, practical problem-solving, and collaboration, the project function aims to keep delivery aligned with client objectives.',
+      'At Mass Infra, the goal is to foster a project culture built on technical diligence, transparent communication, and continuous improvement—from initial planning through execution and handover.'
+    ],
+    strengths: ['Project Coordination', 'Quality Standards', 'Schedule Discipline', 'Execution Excellence'],
+    quote: '“Every successful project is shaped by thoughtful planning, precise execution, and a shared commitment to quality.”'
+  },
+  {
+    name: 'Mr. Shaji Kunju',
+    role: 'Director',
+    theme: 'Trust-Led Leadership. Strategic Growth. Lasting Partnerships.',
+    image: shajiKunjuImg,
+    alt: 'Portrait of Mr. Shaji Kunju',
+    bio: [
+      'Strong business relationships are built on integrity, customer confidence, professional accountability, and a commitment to long-term value. As Director, Mr. Shaji Kunju represents Mass Infra’s emphasis on dependable service and collaborative leadership.',
+      'In a dynamic construction and infrastructure sector, sustainable progress depends on understanding client priorities, communicating transparently, and building partnerships that create mutual value. These principles underpin the company’s relationship-oriented approach.',
+      'Mass Infra aims to strengthen engagement with clients, associates, and project stakeholders while pursuing new opportunities across its construction and engineering capabilities.'
+    ],
+    strengths: ['Client Relationships', 'Strategic Partnerships', 'Business Growth', 'Professional Integrity'],
+    quote: '“Trust is the foundation of every successful partnership. We create value through integrity, collaboration, and dependable service.”'
+  }
+];
+
+function About() {
+  return (
+    <div className="leadership-page">
+      <header className="leadership-hero">
+        <div className="wrap">
+          <div className="leadership-eyebrow">Our Leadership</div>
+          <h1>Leadership That Builds Confidence.<br />Expertise That Delivers.</h1>
+          <p>Meet the leadership team behind Mass Infra Projects &amp; Services. Our approach is grounded in engineering excellence, disciplined execution, customer commitment, and partnerships built to last.</p>
+          <div className="hero-tagline">ENGINEERED FOR EXCELLENCE <span>•</span> BUILT ON TRUST <span>•</span> DELIVERED WITH PRECISION</div>
+        </div>
+      </header>
+
+      <section className="leadership-intro" aria-labelledby="leadership-heading">
+        <div className="wrap">
+          <h2 id="leadership-heading">Experience. Integrity. Execution.</h2>
+          <p>From structural and PEB solutions to civil construction and interiors, we bring a practical, client-focused mindset to every engagement—helping turn project vision into meaningful outcomes.</p>
+        </div>
+      </section>
+
+      <section className="leadership-grid" aria-label="Mass Infra leadership profiles">
+        {leaders.map((leader, idx) => (
+          <article className="leader-card" key={leader.name}>
+            <div className="photo-wrap">
+              <img src={leader.image} alt={leader.alt} loading={idx === 0 ? "eager" : "lazy"} />
+            </div>
+            <div className="card-body">
+              <div className="role">{leader.role}</div>
+              <h3>{leader.name}</h3>
+              <div className="theme">{leader.theme}</div>
+              {leader.bio.map((paragraph, pIdx) => (
+                <p key={pIdx}>{paragraph}</p>
+              ))}
+              <div className="strengths">
+                <strong>Leadership focus</strong>
+                <div className="chips">
+                  {leader.strengths.map(s => <span key={s}>{s}</span>)}
+                </div>
+              </div>
+              <p className="quote">{leader.quote}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="leadership-cta">
+        <div className="wrap">
+          <h2>Let’s Build What’s Next.</h2>
+          <p>Planning a PEB, structural, civil construction, mezzanine, or interior project? Connect with Mass Infra Projects &amp; Services to discuss your requirements and explore a solution built around quality, efficiency, and reliability.</p>
+          <Link className="leadership-button" to="/contact" aria-label="Discuss Your Project with Mass Infra">Discuss Your Project</Link>
+        </div>
+      </section>
+
+      <div className="leadership-footnote">
+        Mass Infra Projects &amp; Services · Leadership profile content for website integration. Please verify names, designations, and all company claims before publishing.
+      </div>
+    </div>
+  );
+}
 function ProjectsPage({mode='all'}){const [filter,setFilter]=useState('All');let items=projects;if(mode==='upcoming')items=items.filter(p=>p.status==='Upcoming');if(mode==='completed')items=items.filter(p=>p.status==='Completed');if(filter!=='All')items=items.filter(p=>p.type===filter);const title=mode==='upcoming'?'Upcoming Projects':mode==='completed'?'Completed Projects':'Our Projects';return <><PageHero eyebrow="DEVELOPMENT PORTFOLIO" title={title+'.'} description={mode==='upcoming'?'Explore concepts and opportunities currently in the planning pipeline.':mode==='completed'?'A showcase of project milestones and completed development work.':'Explore land development, residential and commercial project categories.'}/><section className="section"><div className="container"><div className="project-filter-row"><div><span className="mini-label">PROJECT DIRECTORY</span><h2>Find your area of interest</h2></div><div className="filters">{['All','Land Development','Residential','Commercial'].map(f=><button key={f} className={`filter-btn ${filter===f?'active':''}`} onClick={()=>setFilter(f)}>{f}</button>)}</div></div>{items.length?<ProjectGrid items={items}/>:<div className="prose"><p>No projects match this category yet. Please check another category or contact our team for current information.</p></div>}<p className="disclaimer">Important: Project titles, statuses, descriptions, locations and images are demonstration content—not verified project listings. Please replace them with approved company information before publishing.</p></div></section></>}
 function Partner(){return <><PageHero eyebrow="GROW TOGETHER" title="Partnerships built" accent="on trust." description="We welcome meaningful conversations with landowners, investors and collaborators who see potential in thoughtful development."/><section className="section"><div className="container partner-page-grid"><div><Eyebrow>WAYS TO PARTNER</Eyebrow><h2>Bring the opportunity.<br/><em>Let's plan the next step.</em></h2><p className="lead">Every partnership begins with a conversation. Share a little about your opportunity and our team can follow up to understand the fit.</p>{[['01','Landowners','Discuss land parcels and potential development or joint-development opportunities.'],['02','Investors','Connect with us to discuss potential investment and collaboration opportunities.'],['03','Channel partners','Explore referral, marketing and sales collaboration.'],['04','Professional partners','Connect on construction, design, legal, engineering and related services.']].map(x=><div className="partner-type" key={x[0]}><span>{x[0]}</span><div><h3>{x[1]}</h3><p>{x[2]}</p></div></div>)}</div><EnquiryForm title="Tell us about your opportunity" kind="Partnership"/></div></section></>}
 function EnquiryForm({title='Send an enquiry',kind='General'}){const [status,setStatus]=useState('');const [busy,setBusy]=useState(false);const [form,setForm]=useState({name:'',email:'',phone:'',interest:kind,message:''});const update=e=>setForm({...form,[e.target.name]:e.target.value});function submit(e){e.preventDefault();setBusy(true);setStatus('');const recipient='info@massinfra.example';const subject=encodeURIComponent(`${kind} enquiry from ${form.name}`);const body=encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'Not provided'}\nInterest: ${form.interest}\n\nMessage:\n${form.message}`);setStatus('Your email application should open with the enquiry prepared. Review the message and send it to contact Mass Infra.');window.location.href=`mailto:${recipient}?subject=${subject}&body=${body}`;setBusy(false)}return <form className="form-card" onSubmit={submit}><h2>{title}</h2><div className="form-row"><label>Full name *<input name="name" value={form.name} onChange={update} required placeholder="Your full name"/></label><label>Email address *<input name="email" type="email" value={form.email} onChange={update} required placeholder="you@example.com"/></label></div><div className="form-row"><label>Phone number<input name="phone" type="tel" value={form.phone} onChange={update} placeholder="Your contact number"/></label><label>I'm interested in<select name="interest" value={form.interest} onChange={update}><option>General</option><option>Land Development</option><option>Residential Project</option><option>Commercial Project</option><option>Landowner Partnership</option><option>Investment</option><option>Channel Partnership</option><option>Other</option></select></label></div><label>Tell us a little more *<textarea name="message" value={form.message} onChange={update} required rows="4" placeholder="Share details about your enquiry or opportunity"/></label><button className="btn btn-red full-btn" type="submit" disabled={busy}>{busy?'Submitting…':'Send enquiry'} <ArrowUpRight size={17}/></button>{status&&<p className="form-status" role="status">{status}</p>}<p className="form-note">Frontend-only form: this prepares an email in your email application. Replace info@massinfra.example with the company’s verified email address before publishing.</p></form>}
