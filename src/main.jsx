@@ -43,7 +43,7 @@ const leaders = [
     name: 'Mr. Ramamohan Reddy',
     role: 'Director – Projects',
     theme: 'Precision in Planning. Excellence in Execution.',
-    image: ramamohanReddyImg,
+    image: shajiKunjuImg,
     alt: 'Portrait of Mr. Ramamohan Reddy',
     bio: [
       'Successful project delivery begins with a clear vision, meticulous planning, and a disciplined approach to execution. As Director – Projects, Mr. Ramamohan Reddy represents Mass Infra’s focus on translating project requirements into coordinated, high-quality outcomes.',
@@ -57,7 +57,7 @@ const leaders = [
     name: 'Mr. Shaji Kunju',
     role: 'Director',
     theme: 'Trust-Led Leadership. Strategic Growth. Lasting Partnerships.',
-    image: shajiKunjuImg,
+    image: ramamohanReddyImg,
     alt: 'Portrait of Mr. Shaji Kunju',
     bio: [
       'Strong business relationships are built on integrity, customer confidence, professional accountability, and a commitment to long-term value. As Director, Mr. Shaji Kunju represents Mass Infra’s emphasis on dependable service and collaborative leadership.',

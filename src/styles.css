@@ -175,11 +175,11 @@
 }
 
 .leadership-page .leader-card:nth-child(2) .photo-wrap img {
-  object-position: center 24%;
+  object-position: center 20%;
 }
 
 .leadership-page .leader-card:nth-child(3) .photo-wrap img {
-  object-position: center 20%;
+  object-position: center 24%;
 }
 
 .leadership-page .card-body {
