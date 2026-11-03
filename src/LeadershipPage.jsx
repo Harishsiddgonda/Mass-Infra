@@ -8,7 +8,7 @@ const leaders = [
   {
     name: 'Mr. Arun Kumar',
     role: 'Chairman & Managing Director',
-    image: ramamohanReddy,
+    image: arunKumar,
     alt: 'Portrait of Mr. Arun Kumar',
     theme: 'Visionary Leadership. Engineering Excellence. Enduring Value.',
     paragraphs: [
@@ -22,7 +22,7 @@ const leaders = [
   {
     name: 'Mr. Ramamohan Reddy',
     role: 'Director – Projects',
-    image: arunKumar,
+    image: shajiKunju,
     alt: 'Portrait of Mr. Ramamohan Reddy',
     theme: 'Precision in Planning. Excellence in Execution.',
     paragraphs: [
@@ -36,7 +36,7 @@ const leaders = [
   {
     name: 'Mr. Shaji Kunju',
     role: 'Director',
-    image: shajiKunju,
+    image: ramamohanReddy,
     alt: 'Portrait of Mr. Shaji Kunju',
     theme: 'Trust-Led Leadership. Strategic Growth. Lasting Partnerships.',
     paragraphs: [
